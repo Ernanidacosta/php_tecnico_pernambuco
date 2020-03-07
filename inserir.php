@@ -1,5 +1,5 @@
 <?php
-    $link = mysqli_connect("localhost", "root", "", "test");
+    $link = mysqli_connect("127.0.0.1", "root", "12345", "brtec");
 
     //ckeck connectioin
         if(!$link) {
@@ -7,14 +7,12 @@
         }
 
     //Variables declaration
-        $aluno = $_POST['aluno'];
-        $disciplina = $_POST['disciplina'];
-        $nota1 = $_POST['nota1'];
-        $nota2 = $_POST['nota2'];
-        $nota3 = $_POST['nota3'];
-
+        $id = $_POST['id'];
+        $nome = $_POST['nome'];
+        $cpf = $_POST['cpf'];
+        $nota = $_POST['nota'];
     //SQL query
-        $query = "INSERT INTO etepac (aluno, disciplina, nota1, nota2, nota3) VALUES ('$aluno','$disciplina', '$nota1',  '$nota2', '$nota3')";
+        $query = "INSERT INTO CADALUNO (id, nome, cpf, nota) VALUES ('$id','$nome', '$cpf', '$nota')";
     
     //SQL command execute
         mysqli_query($link, $query);
